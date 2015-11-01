@@ -1,0 +1,101 @@
+<div class="container-fluid deck-panel">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>{{ plant[plantId-1].COMMON_NAME }}</h2>
+        </div>
+        <div class="col-md-7">
+                <ul class="pager">
+                    <li><a href="#/cards">Back to Deck</a></li>
+                    <li><a href="#/plant/{{ prevId }}">Previous</a></li>
+                    <li><a href="#/plant/{{ nextId }}">Next</a></li>
+                </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-sm-6">
+            <img alt="Plant Image" class="plant-normal img-responsive"
+                 onerror="this.src = 'images/plants/Blank.jpg';"
+                 src="images/plants/Plant{{plantId}}.jpg"/>
+        </div>
+        <div class="col-md-7 col-sm-6 table-container">
+            <table class="plant-table" width="100%">
+                <tr>
+                    <td class="col-md-4 field-label">Scientific Name</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].NAME }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Family</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].FAMILY }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Type</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].TYPE }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Origin</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].ORIGIN }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Habit</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].HABIT }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Zone</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].ZONE }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Mature Size</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].MATURE_SIZE }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Leaf</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].LEAF }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Fall Winter Colour</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].FALL_WINTER_COLOUR }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Leaf Arrangement</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].LEAF_ARRANGEMNET }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Flowers</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].FLOWERS }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Infl</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].INFL }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Blossom</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].BLOSSOM }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Water Use</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].WATER_USE }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Soil</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].SOIL }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Exposure</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].EXPOSURE }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Landscape Uses</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].LANDSCAPE_USES }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Limitations</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].LIMITATIONS }}</td>
+                </tr>
+                <tr>
+                    <td class="col-md-4 field-label">Other Features</td>
+                    <td class="col-md-8 field-value">{{ plant[plantId-1].OTHER_FEATURES }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

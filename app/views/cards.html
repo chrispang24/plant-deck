@@ -1,0 +1,67 @@
+<div class="container-fluid deck-panel">
+    <div class="row">
+        <div class="deck-panel-header">
+            <!--Sidebar content-->
+            <div class="col-md-5 col-sm-8 col-xs-8 narrow-inner">
+                <div class="input-group">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                      </span>
+                    <input type="text" placeholder="Plant Name" ng-model="query" class="form-control search-box">
+                </div>
+                <!-- /input-group -->
+            </div>
+            <div class="col-md-7 col-sm-9 col-xs-9 narrow-inner">
+                <dir-pagination-controls template-url="views/dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 inner">
+            <table width="100%">
+                <thead>
+                <tr>
+                    <th class="col-sm-3 hidden-xs"></th>
+                    <th class="col-sm-3 hidden-xs selectable">
+                        <span ng-click="sortPlants('NAME')">Scientific Name</span></th>
+                    <th class="col-sm-3 hidden-xs selectable">
+                        <span ng-click="sortPlants('COMMON_NAME')">Common Name</span></th>
+                    <th class="col-sm-3 hidden-xs selectable">
+                        <span ng-click="sortPlants('FAMILY')">Family</span>
+                    </th>
+                    <th colspan ="2" class="col-xs-6 visible-xs selectable">
+                        <span ng-click="sortPlants('NAME')">Plant</span>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+            <div class="table-container">
+                <table class="plant-table" width="100%">
+                    <tbody>
+                    <tr dir-paginate="plant in plants | filter:query | orderBy:orderProp | itemsPerPage:20"
+                        ng-click="showPlant(plant)" class="selectable">
+                        <td class="col-sm-3 col-xs-6">
+                            <img class="plant-thumbnail img-responsive" alt="Plant"
+                                 onerror="this.src = 'images/plants/Blank.jpg';"
+                                 src="images/plants/Plant{{plant.ID}}.jpg"/></td>
+                        <td class="col-sm-3 hidden-xs">{{plant.NAME}}</td>
+                        <td class="col-sm-3 hidden-xs">{{plant.COMMON_NAME}}</td>
+                        <td class="col-sm-3 hidden-xs">{{plant.FAMILY}}</td>
+                        <td class="col-xs-6 visible-xs ">
+                            <p><span class="plant-label">Scientific Name</span><br />{{plant.NAME}}</p>
+                            <p><span class="plant-label">Common Name</span><br />{{plant.COMMON_NAME}}</p>
+                            <p><span class="plant-label">Family</span><br />{{plant.FAMILY}}</p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+</div>
